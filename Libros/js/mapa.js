@@ -19,6 +19,7 @@ map = new google.maps.Map(
 google.maps.event.addListener(map, 'click', function (event) {
  
     datolatitud_longitud = event.latLng.toString();
+    alert(datolatitud_longitud)
 
    
 
@@ -61,9 +62,6 @@ function leeDireccion( latlng) {
         geocoder.geocode({'latLng': latlng}, function(results, status) {
             if (status == google.maps.GeocoderStatus.OK) {
                 if (results[1]) {
-                    //https://developers.google.com/maps/documentation/javascript/geocoding?hl=es
-                    //  alert(results[1].formatted_address);
-                    //  alert(results[0].formatted_address);
                     MuestraDireccion(latlng,results[0].formatted_address)
                 } else {
                     alert('No results found');
@@ -81,6 +79,9 @@ function leeDireccion( latlng) {
 
 function MuestraDireccion(latlng,direccion) {
  
+    iCalle.value=direccion;
+    iLatitud.value=latlng.lat();
+    iLongitud.value=latlng.lng();
 direccionLocal.value= direccion;
     
     latitud_longitud.value=latlng.lat()+","+latlng.lng();

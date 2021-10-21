@@ -47,8 +47,8 @@ https://coolors.co/8ecae6-219ebc-023047-ffb703-fb8500
     display: grid;
     grid-template-areas:  "a a"
                           "b b"
-                          "c d"
-                          "c d"
+                          "c c"
+                          "c c"
                           "e e";                          
     
      grid-template-rows: 180x 60px  auto auto  100px; 
