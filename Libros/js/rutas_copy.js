@@ -159,6 +159,8 @@ function _displayItems(data) {
         let td6 = tr.insertCell(5);
         td6.appendChild(editButton);
 
+
+        visualizaMarcador(item.latitud,item.longitud);
      /*   let td7 = tr.insertCell(6);
         td7.appendChild(deleteButton);*/
     });
@@ -168,4 +170,21 @@ function _displayItems(data) {
     // Nada mas cargar el fichero js en memoria ejecuta este comando que viosualiza en una
     // table los resgsitros de empleados obtenidos desde le ApiRest
   // getItems();
+}
+
+function visualizaMarcador(latitud,longitud){
+    var icono = {
+        url: "./imagenes/curso.png", // url
+        scaledSize: new google.maps.Size(25, 25), // scaled size
+        origin: new google.maps.Point(0,0), // origin
+        anchor: new google.maps.Point(0, 0) // anchor
+    };
+    
+    var latlng=new google.maps.LatLng(latitud,latitud);
+    var marker = new google.maps.Marker({
+        position: latlng,
+        icon: icono,
+        map: map,
+        nombre: 'Pepino'
+    });
 }
